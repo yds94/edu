@@ -6,8 +6,8 @@ use think\exception\HttpResponseException;
 class Base extends Controller
 {
     protected function _initialize(){
-        Session::set('uid','ceshisession');
-        //Session::delete('uid');
+        //Session::set('uid','ceshisession');
+        Session::delete('uid');
         $uid = session('uid');
         if($uid == null){
           return   $this->api_err('请登录',$_POST);
